@@ -1,0 +1,44 @@
+#dog-button-cont {
+    display: flex;
+    justify-content: center;
+}
+
+#dog-button {
+    background-color: grey;
+    padding: 3%;
+    border-radius: 100%;
+}
+
+#image-container {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.body {
+    background-color: grey;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.main-title-cont {
+    display: flex;
+    justify-content: center;
+}
+
+.main-title {
+    font-size: 45pt;
+    color: white;
+    text-shadow: 
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px  1px 0 #000, 
+        1px  1px 0 #000; /* Outline color */
+}
+
+.image-container {
+    width: 75%;
+    background-color: black;
+}
