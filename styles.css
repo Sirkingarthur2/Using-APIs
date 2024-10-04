@@ -1,12 +1,15 @@
 #dog-button-cont {
     display: flex;
     justify-content: center;
+    margin-top: 10%;
 }
 
 #dog-button {
     background-color: grey;
-    padding: 3%;
+    padding: 1%;
     border-radius: 100%;
+    font-size: 15pt;
+    font-weight: bold;
 }
 
 #image-container {
