@@ -2,7 +2,6 @@
     display: flex; /* Enables flexbox layout */
     flex-direction: column; /* Stacks children vertically */
     align-items: center; /* Centers items horizontally */
-    /* justify-content: center; */ /* Uncomment to center items vertically */
     height: 100vh; /* Sets height to full viewport height */
     margin-top: 5%; /* Adds space above the body */
     font-family: Arial, sans-serif; /* Sets a clean, sans-serif font */
@@ -11,18 +10,15 @@
 
 .list {
     width: 100%; /* Full width for the list */
+    display: flex; /* Enables flexbox for the list */
+    flex-direction: column; /* Stacks list items vertically */
+    justify-content: center; /* Centers items vertically */
+    align-items: center; /* Centers items horizontally */
 }
 
 .list span {
     font-weight: bold; /* Makes text bold */
     color: #333; /* Dark color for better readability */
-}
-
-.list {
-    display: flex; /* Enables flexbox for the list */
-    flex-direction: column; /* Stacks list items vertically */
-    justify-content: center; /* Centers items vertically */
-    align-items: center; /* Centers items horizontally */
 }
 
 .description {
@@ -44,7 +40,6 @@
     margin-top: 10px; /* Space above the error message */
 }
 
-
 .result-container {
     display: flex; /* Enables flexbox layout */
     flex-direction: column; /* Stacks children vertically */
@@ -54,14 +49,11 @@
     margin-top: 20px; /* Space above the container */
 }
 
-#pokemonSprite {
+.pokemon-sprite {
     max-width: 100%; /* Ensures the image is responsive */
     height: 100%; /* Maintains the aspect ratio of the image */
-    display: block; /* Ensures the image is treated as a block element */
+    display: none; /* Initially hidden */
 }
-
-
-
 
 .clear-button {
     background-color: #f44336; /* Red background */
@@ -81,10 +73,6 @@
 .clear-button:hover {
     background-color: #d32f2f; /* Darker red on hover */
 }
-
-
-
-
 
 .button {
     appearance: none; /* Removes default button styling */
