@@ -9,7 +9,7 @@ async function fetchData() {
     const err = document.getElementById("errorMessage");
     const imgElement = document.getElementById("pokemonSprite");
     const weight = document.getElementById("weight");
-    const type = document.getElementById("type");
+    const type = document.getElementById("type"); //something
 
     try {
         // Retrieve the Pokémon name from the input field and convert it to lowercase
