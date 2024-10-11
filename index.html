@@ -1,25 +1,32 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
   <head>
-    <meta charset = "UTF-8" />
-    <meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel = "stylesheet" href = "styles.css" />
+    <meta charset="UTF-8" /> <!-- Character encoding for the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Responsive design for mobile devices -->
+    <title>Document</title> <!-- Title of the webpage -->
+    <link rel="stylesheet" href="styles.css" /> <!-- Link to the external CSS stylesheet -->
   </head>
-  <body class = "body">
 
-    <div class="main-title-cont">
-        <h1 class="main-title">Get a Random Dog!</h1>
-    </div>
-
-    <div id="image-container" class="image-container">
+  <body class="body">
     
-    </div>
+    <p class="description">Choose a pokemon to see its type and weight!</p> <!-- Instruction for the user -->
+    
+    <ul class="list">
+      <li>Type: <span id="type"></span></li> <!-- Placeholder for displaying the Pokémon type -->
+      <li>Weight: <span id="weight"></span></li> <!-- Placeholder for displaying the Pokémon weight -->
+    </ul>    
 
-    <div id = "dog-button-cont">
-      <button id = "dog-button">New Dog</button>
+    <div class="contents">
+      <input type="text" id="pokemonName" placeholder="Enter pokemon name" class="input"> <!-- Input field for Pokémon name -->
+      <button onclick="fetchData()" class="button" role="button"><span class="text">Get Pokemon</span></button> <!-- Button to fetch Pokémon data -->
+      <button onclick="clearFields()" class="clear-button" role="button"><span class="text">Clear</span></button> <!-- Button to clear input fields -->
+      <div class="result-container">
+        <img src="" alt="Pokemon Sprite" id="pokemonSprite" style="display: none"> <!-- Image element for Pokémon sprite, initially hidden -->
+        <p id="errorMessage"></p> <!-- Placeholder for displaying error messages -->
+      </div>
     </div>
-
-    <script src = "main.js"></script>
+    
+    <script src="main.js"></script> <!-- Link to the external JavaScript file -->
   </body>
 </html>
+

@@ -1,47 +1,136 @@
-#dog-button-cont {
-    display: flex;
-    justify-content: center;
-    margin-top: 10%;
-}
-
-#dog-button {
-    background-color: grey;
-    padding: 1%;
-    border-radius: 100%;
-    font-size: 15pt;
-    font-weight: bold;
-}
-
-#image-container {
-    display: flex;
-    justify-content: center;
-    height: 100%;
-}
-
 .body {
-    background-color: grey;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
+    display: flex; /* Enables flexbox layout */
+    flex-direction: column; /* Stacks children vertically */
+    align-items: center; /* Centers items horizontally */
+    /* justify-content: center; */ /* Uncomment to center items vertically */
+    height: 100vh; /* Sets height to full viewport height */
+    margin-top: 5%; /* Adds space above the body */
+    font-family: Arial, sans-serif; /* Sets a clean, sans-serif font */
+    background-color: #c9c9c9; /* Light gray background for contrast */
 }
 
-.main-title-cont {
-    display: flex;
-    justify-content: center;
+.list {
+    width: 100%; /* Full width for the list */
 }
 
-.main-title {
-    font-size: 45pt;
-    color: white;
-    text-shadow: 
-        -1px -1px 0 #000,  
-        1px -1px 0 #000,
-        -1px  1px 0 #000, 
-        1px  1px 0 #000; /* Outline color */
+.list span {
+    font-weight: bold; /* Makes text bold */
+    color: #333; /* Dark color for better readability */
 }
 
-.image-container {
-    width: 75%;
-    background-color: black;
+.list {
+    display: flex; /* Enables flexbox for the list */
+    flex-direction: column; /* Stacks list items vertically */
+    justify-content: center; /* Centers items vertically */
+    align-items: center; /* Centers items horizontally */
+}
+
+.description {
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for description */
+    font-weight: 300; /* Light font weight */
+    font-size: larger; /* Increases font size */
+}
+
+.input[type="text"] {
+    padding: 10px; /* Adds padding inside the input */
+    margin: 10px 0; /* Adds vertical space around the input */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounds the corners of the input */
+    width: 200px; /* Sets a fixed width for the input */
+}
+
+#errorMessage {
+    color: red; /* Red color for error messages */
+    margin-top: 10px; /* Space above the error message */
+}
+
+#pokemonSprite {
+    margin-top: 20px; /* Space above the image */
+    max-width: 100%; /* Ensures the image is responsive */
+    height: auto; /* Maintains the aspect ratio of the image */
+}
+
+
+
+
+.clear-button {
+    background-color: #f44336; /* Red background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for the button */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Inline block for proper spacing */
+    font-size: 16px; /* Font size */
+    margin-left: 10px; /* Space between buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.clear-button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+
+
+
+
+.button {
+    appearance: none; /* Removes default button styling */
+    background-color: #FFFFFF; /* White background for the button */
+    border-width: 0; /* No border */
+    box-sizing: border-box; /* Includes padding and border in element's total width and height */
+    color: #000000; /* Black text color */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    display: inline-block; /* Allows setting width and height */
+    font-family: Clarkson, Helvetica, sans-serif; /* Sets font for the button */
+    font-size: 14px; /* Sets font size */
+    font-weight: 500; /* Medium font weight */
+    letter-spacing: 0; /* No letter spacing */
+    line-height: 1em; /* Sets line height */
+    margin: 0; /* Removes default margin */
+    opacity: 1; /* Fully opaque */
+    outline: 0; /* Removes outline */
+    padding: .8em 1.4em; /* Adds padding inside the button */
+    position: relative; /* Positions the button relative to its normal position */
+    text-align: center; /* Centers text inside the button */
+    text-decoration: none; /* Removes underline from text */
+    text-rendering: geometricprecision; /* Improves text rendering */
+    text-transform: uppercase; /* Transforms text to uppercase */
+    transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1), background-color 100ms cubic-bezier(.694, 0, 0.335, 1), color 100ms cubic-bezier(.694, 0, 0.335, 1); /* Smooth transitions for hover effects */
+    user-select: none; /* Prevents text selection */
+    -webkit-user-select: none; /* Prevents text selection in WebKit browsers */
+    touch-action: manipulation; /* Prevents default touch actions */
+    vertical-align: baseline; /* Aligns button with baseline */
+    white-space: nowrap; /* Prevents text wrapping */
+}
+
+.button:before {
+    animation: opacityFallbackOut .5s step-end forwards; /* Animation for button background */
+    backface-visibility: hidden; /* Hides the back face of the button */
+    background-color: #EBEBEB; /* Light gray background for the button */
+    clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%); /* Defines the shape of the button background */
+    content: ""; /* Required for pseudo-elements */
+    height: 100%; /* Full height of the button */
+    left: 0; /* Aligns to the left */
+    position: absolute; /* Positions the background absolutely */
+    top: 0; /* Aligns to the top */
+    transform: translateZ(0); /* Triggers hardware acceleration */
+    transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1); /* Smooth transition for clip-path */
+    width: 100%; /* Full width of the button */
+}
+
+.button:hover:before {
+    animation: opacityFallbackIn 0s step-start forwards; /* Animation for hover effect */
+    clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%); /* Changes shape on hover */
+}
+
+.button:after {
+    background-color: #FFFFFF; /* White background for the button */
+}
+
+.button span {
+    z-index: 1; /* Ensures text is above the background */
+    position: relative; /* Positions text relative to the button */
 }

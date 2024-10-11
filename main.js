@@ -1,23 +1,49 @@
-// let imageNeeded;
-let button = document.getElementById('dog-button');
-let divForImage = document.getElementById('image-container');
-
-function dataThing(data) {
-    return data.message; // Return the image URL directly
+// Function to clear input fields and refresh the page
+function clearFields() {
+    location.reload(); // This will refresh the page, clearing all fields
 }
 
-button.addEventListener('click', () => {
-    fetch('https://dog.ceo/api/breeds/image/random')
-        .then(resolve => resolve.json())
-        .then(data => {
-            const imageNeeded = dataThing(data); // Get the image URL
-            console.log(imageNeeded); // Log the image URL after it's assigned
-            
-            // Set the body's background image
-            document.body.style.backgroundImage = `url(${imageNeeded})`;
-            document.body.style.backgroundSize = 'cover'; // Ensure the image covers the entire background
-            document.body.style.backgroundPosition = 'center'; // Center the image
-            document.body.style.backgroundRepeat = 'no-repeat'; // Prevent the image from repeating
-        })
-        .catch(error => console.error('Error fetching the dog image:', error)); // Handle any errors
-});
+// Asynchronous function to fetch Pokémon data from the API
+async function fetchData() {
+    // Get references to DOM elements for displaying results and error messages
+    const err = document.getElementById("errorMessage");
+    const imgElement = document.getElementById("pokemonSprite");
+    const weight = document.getElementById("weight");
+    const type = document.getElementById("type");
+
+    try {
+        // Retrieve the Pokémon name from the input field and convert it to lowercase
+        const pokemonName = document.getElementById("pokemonName").value.toLowerCase();
+        // Fetch data from the Pokémon API using the entered name
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+
+        // Check if the response is not OK (e.g., Pokémon not found)
+        if (!response.ok) {
+            throw new Error("Pokemon not found."); // Throw an error if the Pokémon is not found
+        }
+
+        err.innerText = ""; // Clear any previous error messages
+        const data = await response.json(); // Parse the JSON response
+
+        // Extract the Pokémon sprite URL from the data
+        const pokemonSprite = data.sprites.front_default;
+
+        // Extract the Pokémon type from the data
+        const pokemonType = data.types[0].type.name;
+        type.innerText = pokemonType; // Display the Pokémon type
+
+        // Extract the Pokémon weight from the data
+        const pokemonWeight = data.weight;
+        weight.innerText = pokemonWeight; // Display the Pokémon weight
+
+        imgElement.src = pokemonSprite; // Set the image source to the Pokémon sprite
+        imgElement.style.display = "block"; // Show the image when data is fetched successfully
+        err.style.display = "none"; // Hide the error message
+    } catch (error) {
+        err.innerText = `${error}`; // Display the error message if an error occurs
+        err.style.display = "block"; // Show the error message
+        imgElement.style.display = "none"; // Hide the image when an error occurs
+        type.innerText = ""; // Clear the Pokémon type display
+        weight.innerText = ""; // Clear the Pokémon weight display
+    }
+}
