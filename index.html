@@ -1,35 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" /> <!-- Character encoding for the document -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Responsive design for mobile devices -->
     <title>Document</title> <!-- Title of the webpage -->
     <link rel="stylesheet" href="styles.css" /> <!-- Link to the external CSS stylesheet -->
-  </head>
+</head>
 
-  <body class="body">
+<body class="body">
     
     <p class="description">Choose a pokemon to see its type and weight!</p> <!-- Instruction for the user -->
     
     <ul class="list">
-      <li>Type: <span id="type"></span></li> <!-- Placeholder for displaying the Pokémon type -->
-      <li>Weight: <span id="weight"></span></li> <!-- Placeholder for displaying the Pokémon weight -->
+        <li>Type: <span id="type"></span></li> <!-- Placeholder for displaying the Pokémon type -->
+        <li>Weight: <span id="weight"></span></li> <!-- Placeholder for displaying the Pokémon weight -->
     </ul>    
 
     <div class="contents">
-      <input type="text" id="pokemonName" placeholder="Enter pokemon name" class="input"> <!-- Input field for Pokémon name -->
-      <button onclick="fetchData()" class="button" role="button"><span class="text">Get Pokemon</span></button> <!-- Button to fetch Pokémon data -->
-      <button onclick="clearFields()" class="clear-button" role="button"><span class="text">Clear</span></button> <!-- Button to clear input fields -->
-      <div class="result-container">
-        <img src="main.js" alt="Pokemon Sprite" id="pokemonSprite" style="display: none"> <!-- Image element for Pokémon sprite, initially hidden -->
-        <p id="errorMessage"></p> <!-- Placeholder for displaying error messages -->
-    </div>    
+        <input type="text" id="pokemonName" placeholder="Enter pokemon name" class="input"> <!-- Input field for Pokémon name -->
+        <button onclick="fetchData()" class="button" role="button"><span class="text">Get Pokemon</span></button> <!-- Button to fetch Pokémon data -->
+        <button onclick="clearFields()" class="clear-button" role="button"><span class="text">Clear</span></button> <!-- Button to clear input fields -->
+        <div class="result-container">
+            <img src="main.js" alt="Pokemon Sprite" id="pokemonSprite" class="pokemon-sprite"> <!-- Image element for Pokémon sprite, initially hidden -->
+            <p id="errorMessage"></p> <!-- Placeholder for displaying error messages -->
+        </div>    
     </div>
     
     <script src="main.js"></script> <!-- Link to the external JavaScript file -->
-  </body>
+</body>
 </html>
-
-
-
-
