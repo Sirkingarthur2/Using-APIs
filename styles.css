@@ -16,7 +16,13 @@
     align-items: center; /* Centers items horizontally */
 }
 
-.list span {
+
+#type {
+    font-weight: bold; /* Makes text bold */
+    color: #333; /* Dark color for better readability */
+}
+
+#weight {
     font-weight: bold; /* Makes text bold */
     color: #333; /* Dark color for better readability */
 }
@@ -128,8 +134,8 @@
     background-color: #FFFFFF; /* White background for the button */
 }
 
-.button span {
+
+#text {
     z-index: 1; /* Ensures text is above the background */
     position: relative; /* Positions text relative to the button */
 }
-
