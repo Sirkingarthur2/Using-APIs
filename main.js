@@ -1,4 +1,3 @@
-// Function to clear input fields and refresh the page
 function clearFields() {
     location.reload(); // This will refresh the page, clearing all fields
 }
